@@ -129,6 +129,24 @@ p {
 	    }
 	    // RUNTIMESTARTEND
     </script>
+    <script>
+		function CopyToClipboard(text) {
+			if (navigator.clipboard) {
+				navigator.clipboard.writeText(text);
+			} else {
+				var elt = document.createElement("textarea");
+				elt.value = text;
+				elt.style.position = "fixed";
+				elt.style.top = "0";
+				elt.style.left = "0";
+				document.body.appendChild(elt);
+				elt.focus();
+				elt.select();
+				document.execCommand('copy');
+				document.body.removeChild(elt);
+			}
+		}				
+    </script>
     <p align="center">Clickteam Fusion 2.5 HTML5 template. Please use final build for distribution.</p>
 
     <!-- Clickteam logo, encoded within the html code.-->  
